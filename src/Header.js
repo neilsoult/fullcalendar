@@ -193,7 +193,12 @@ function Header(calendar, options) {
 	
 	
 	function updateTitle(text) {
-		el.find('h2').text(text);
+		var tSplit = text.split(' ');
+		if (tSplit.length > 1) {
+			el.find('h2').text(tSplit[0] + ' ').append($('<span>').text(tSplit[1]));
+		} else {
+			el.find('h2').text(text);
+		}
 	}
 	
 	
